@@ -1,0 +1,18 @@
+.card {
+    /* Use a linear gradient from top-left to bottom-right */
+    -fx-background-color: linear-gradient(to bottom right, #AED6F1, #E8EEF9);
+
+    /* Rounded corners */
+    -fx-background-radius: 30; /* Adjust to taste */
+    -fx-border-radius: 30;
+
+    /* Optional border */
+    -fx-border-color: #5eaee4;
+    -fx-border-width: 2px;
+
+    /* Drop shadow for depth */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 4, 4);
+
+    /* Internal padding so content isn’t stuck to edges */
+    -fx-padding: 15;
+}

@@ -1,0 +1,49 @@
+/* Styling for the TableView */
+#tblBooks {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #aed6f1;
+    -fx-border-radius: 10px;
+    -fx-padding: 5px;
+}
+
+/* Styling for the Table Header */
+#tblBooks .column-header-background {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 10px 10px 0px 0px;
+}
+
+/* Styling for the Table Header Text */
+#tblBooks .column-header {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Styling for Table Rows */
+#tblBooks .table-row-cell {
+    -fx-background-color: #e8eef9;
+    -fx-border-color: #d6eaf8;
+    -fx-font-size: 13px;
+}
+
+/* Styling for Alternate Row Colors */
+#tblBooks .table-row-cell:odd {
+    -fx-background-color: #d6eaf8;
+}
+
+/* Styling for Selected Row */
+#tblBooks .table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* Styling for Table Cells */
+#tblBooks .table-cell {
+    -fx-padding: 8px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Styling for Scroll Bar */
+#tblBooks .scroll-bar:vertical {
+    -fx-background-color: #aed6f1;
+}

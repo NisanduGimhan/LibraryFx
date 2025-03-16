@@ -1,0 +1,170 @@
+/* ----------------------------------------------------------
+   Tailwind-Inspired Utility Classes for JavaFX
+   ---------------------------------------------------------- */
+
+/* === Colors === */
+.bg-blue-light {
+    -fx-background-color: linear-gradient(to bottom right, #AED6F1, #85C1E9);
+}
+.bg-white {
+    -fx-background-color: #FFFFFF;
+}
+.text-blue-dark {
+    -fx-text-fill: #2C3E50;
+}
+.text-gray-dark {
+    -fx-text-fill: #4A4A4A;
+}
+.text-gray-light {
+    -fx-text-fill: #7F8C8D;
+}
+
+/* === Sizing & Spacing === */
+.p-4 {
+    -fx-padding: 16px;
+}
+.p-3 {
+    -fx-padding: 12px;
+}
+.mt-2 {
+    -fx-margin-top: 8px;
+}
+.mt-4 {
+    -fx-margin-top: 16px;
+}
+.w-full {
+    -fx-pref-width: 100%;
+}
+.h-full {
+    -fx-pref-height: 100%;
+}
+
+/* === Rounded Corners === */
+.rounded-xl {
+    -fx-background-radius: 16px;
+}
+.rounded-lg {
+    -fx-background-radius: 12px;
+}
+
+/* === Shadows === */
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 5, 5);
+}
+.shadow-lg {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 5, 5);
+}
+
+/* === Font & Text === */
+.font-bold {
+    -fx-font-weight: bold;
+}
+.text-2xl {
+    -fx-font-size: 24px;
+}
+.text-3xl {
+    -fx-font-size: 30px;
+}
+.text-4xl {
+    -fx-font-size: 36px;
+}
+
+/* === Centering Content === */
+.flex {
+    /* JavaFX doesn't have a direct 'display: flex' but we can mimic */
+    -fx-alignment: center;
+}
+.items-center {
+    /* Typically you'd combine with .flex in web,
+       but for JavaFX you might do alignment on a container. */
+    -fx-alignment: center;
+}
+
+/* === Hover Effects (limited in JavaFX CSS) === */
+.hoverable:hover {
+    -fx-background-color: #D6EAF8;
+}
+
+/* ----------------------------------------------------------
+   Component-Specific Classes (Cards, Labels, Images, etc.)
+   ---------------------------------------------------------- */
+
+/* Cards (for those AnchorPanes showing totals) */
+/* Default card styling */
+/* Card with Border and Shadow from #5eaee4 */
+.card {
+    /* Semi-transparent gradient background
+       from #AED6F1 to #E8EEF9 at 80% opacity */
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        rgba(174, 214, 241, 0.8),
+        rgba(232, 238, 249, 0.8)
+    );
+    -fx-background-radius: 20px;
+
+    /* Border with your desired color */
+    -fx-border-color: #5eaee4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+
+    /* Internal spacing */
+    -fx-padding: 12px;
+
+    /* Drop shadow using a semi-transparent version of the border color */
+    -fx-effect: dropshadow(three-pass-box, rgba(94, 174, 228, 0.6), 10, 0, 5, 5);
+}
+
+/* Hover effect for cards */
+.card:hover {
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        rgba(248, 251, 255, 1.0),
+        rgba(255, 255, 255, 1.0)
+    );
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.25), 10, 0, 5, 5);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-cursor: hand; /* Changes cursor to a hand on hover */
+}
+
+
+
+/* Large Number Labels */
+.large-number {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+/* Description Label (e.g., "Total Books") */
+.desc-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7F8C8D;
+}
+
+/* Welcome Title */
+.welcome-title {
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+/* Date & Time Labels */
+.date-time-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+/* BarChart styling */
+.chart {
+    -fx-background-color: transparent;
+    /* Adjust chart styling as needed */
+}
+
+/* Background Image (if you want a subtle fade or shadow) */
+.bg-image {
+    -fx-opacity: 0.3;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 2, 2);
+}

@@ -1,0 +1,31 @@
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+import java.net.URL;
+
+public class Starter extends Application {
+    public static void main(String[] args) {
+     launch();
+    }
+    @Override
+    public void start(Stage stage) throws Exception {
+
+
+        Parent root = FXMLLoader.load(getClass().getResource("view/DashBoardForm.fxml"));
+
+        // Create the scene
+        Scene scene = new Scene(root);
+
+        // Set the background color of the scene (the window's background)
+        scene.setFill(Color.BLUE);  // Set the background color of the window to blue
+
+        // Set the scene on the stage
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("SmartLibraryX");
+    }
+}

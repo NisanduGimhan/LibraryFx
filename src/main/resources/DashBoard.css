@@ -1,0 +1,71 @@
+/* 🌟 Sidebar Styling - Smooth Shadow & Rounded Corners */
+AnchorPane {
+    -fx-background-color: linear-gradient(to bottom, #AED6F1, #85C1E9);
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 12, 0, 5, 5);
+}
+
+/* 🎨 Sidebar Title */
+Label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e1e1e;
+    -fx-padding: 10px 0;
+}
+
+/* 📌 Buttons - Soft Colors, Rounded, Smooth Transition */
+Button {
+    -fx-background-color: linear-gradient(to bottom, #E8EEF9, #D4E6F1);
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e1e1e;
+    -fx-border-color: transparent;
+    -fx-padding: 8px 18px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 5, 0, 2, 2);
+    -fx-transition: all 0.4s ease-in-out;
+}
+
+/* ✨ Hover Effect - Professional Color Shift */
+Button:hover {
+    -fx-background-color: linear-gradient(to bottom, #2980b9, #3498db);
+    -fx-border-color: #1c0d93;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 8, 0, 3, 3);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* 🔥 Logout Button - Transparent with Smooth Border */
+#btnLogOutOnAction {
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 25px;
+    -fx-text-fill: black;
+    -fx-padding: 8px 18px;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+/* 🚀 Logout Button Hover - Vibrant Color Change */
+#btnLogOutOnAction:hover {
+    -fx-background-color: black;
+    -fx-border-radius: 25px;
+    -fx-text-fill: white;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* 🎨 Icons - Subtle Drop Shadow */
+ImageView {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 6, 0, 3, 3);
+}
+
+/* ⚡ Sidebar Button Pressed Effect */
+Button:pressed {
+    -fx-background-color: #1c2833;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}

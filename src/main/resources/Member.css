@@ -1,0 +1,67 @@
+/* Styling for the TableView */
+#tblMembers {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #aed6f1;
+    -fx-border-radius: 10px;
+    -fx-padding: 5px;
+}
+
+/* Styling for the Table Header */
+#tblMembers .column-header-background {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 10px 10px 0px 0px;
+}
+
+/* Styling for the Table Header Text */
+#tblMembers .column-header {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Styling for Table Rows */
+#tblMembers .table-row-cell {
+    -fx-background-color: #e8eef9;
+    -fx-border-color: #d6eaf8;
+    -fx-font-size: 13px;
+}
+
+/* Styling for Alternate Row Colors */
+#tblMembers .table-row-cell:odd {
+    -fx-background-color: #d6eaf8;
+}
+
+/* Styling for Selected Row */
+#tblMembers .table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* Styling for Table Cells */
+#tblMembers .table-cell {
+    -fx-padding: 8px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Styling for Scroll Bar */
+#tblMembers .scroll-bar:vertical {
+    -fx-background-color: #aed6f1;
+}
+.card {
+    /* Use a linear gradient from top-left to bottom-right */
+    -fx-background-color: linear-gradient(to bottom right, #AED6F1, #E8EEF9);
+
+    /* Rounded corners */
+    -fx-background-radius: 30; /* Adjust to taste */
+    -fx-border-radius: 30;
+
+    /* Optional border */
+    -fx-border-color: #5eaee4;
+    -fx-border-width: 2px;
+
+    /* Drop shadow for depth */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 4, 4);
+
+    /* Internal padding so content isn’t stuck to edges */
+    -fx-padding: 15;
+}

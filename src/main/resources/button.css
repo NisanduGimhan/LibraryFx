@@ -1,0 +1,67 @@
+/* General Button Styling */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 2px 4px;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Button Pressed Effect */
+.button:pressed {
+    -fx-background-color: #1f618d;
+}
+
+/* Disabled Button */
+.button:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* Specific Styling for Add Button */
+#btnAdd {
+    -fx-background-color: #2ecc71;
+}
+
+#btnAdd:hover {
+    -fx-background-color: #27ae60;
+}
+
+#btnAdd:pressed {
+    -fx-background-color: #1e8449;
+}
+
+/* Specific Styling for Delete Button */
+#btnDelete {
+    -fx-background-color: #e74c3c;
+}
+
+#btnDelete:hover {
+    -fx-background-color: #c0392b;
+}
+
+#btnDelete:pressed {
+    -fx-background-color: #922b21;
+}
+
+/* Specific Styling for Update Button */
+#btnUpdate {
+    -fx-background-color: #f39c12;
+}
+
+#btnUpdate:hover {
+    -fx-background-color: #e67e22;
+}
+
+#btnUpdate:pressed {
+    -fx-background-color: #d35400;
+}

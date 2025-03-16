@@ -1,0 +1,69 @@
+/* Make the chart background transparent */
+.chart {
+    -fx-background-color: transparent;
+}
+
+/* Transparent background for the chart plot */
+.chart-plot-background {
+    -fx-background-color: rgba(255, 255, 255, 0.6); /* Soft transparency */
+    -fx-background-radius: 10px;
+}
+
+/* Title styling */
+.chart-title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #0A3D62; /* Dark blue title */
+    -fx-font-weight: bold;
+}
+
+/* Axis styling */
+.axis {
+    -fx-tick-label-fill: #0A3D62; /* Dark blue axis labels */
+    -fx-font-size: 14px;
+}
+
+.axis-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #0A3D62;
+    -fx-font-weight: bold;
+}
+
+/* General bar styling */
+.chart-bar {
+    -fx-bar-fill: #66B3FF; /* Soft blue bars */
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+}
+
+/* Hover effect for bars */
+.chart-bar:hover {
+    -fx-bar-fill: #3399FF; /* Darker blue on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 5);
+}
+
+/* Legend styling */
+.chart-legend {
+    -fx-background-color: #E3F2FD; /* Light blue background */
+    -fx-border-radius: 8px;
+    -fx-padding: 4px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #0A3D62;
+}
+
+/* First category */
+.default-color0.chart-bar {
+    -fx-bar-fill: #66B3FF; /* Soft blue */
+}
+
+.default-color0.chart-bar:hover {
+    -fx-bar-fill: #3399FF; /* Darker blue */
+}
+
+/* Second category */
+.default-color1.chart-bar {
+    -fx-bar-fill: #4A90E2; /* Slightly darker blue */
+}
+
+.default-color1.chart-bar:hover {
+    -fx-bar-fill: #2068C0; /* Even darker blue */
+}
