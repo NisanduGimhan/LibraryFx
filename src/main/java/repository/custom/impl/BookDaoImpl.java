@@ -156,20 +156,20 @@ public class BookDaoImpl implements BookDao {
                 throw new SQLException("Connection is not valid.");
             }
 
-            // Log the BookID that we're trying to update
+
             System.out.println("Updating book status for BookID: " + id);
 
             PreparedStatement preparedStatement = connection.prepareStatement(
                     "UPDATE books SET availabilityStatus = 'Borrowed' WHERE BookID  = ?"
             );
-            preparedStatement.setInt(1, id);  // Ensure we're passing an integer
+            preparedStatement.setInt(1, id);
             int rowsAffected = preparedStatement.executeUpdate();
 
-            // Log the number of affected rows
+
             System.out.println("Rows affected: " + rowsAffected);
 
             if (rowsAffected > 0) {
-                return true;  // Successfully updated
+                return true;
             } else {
                 System.out.println("No rows were updated.");
                 return false;
@@ -199,6 +199,5 @@ public class BookDaoImpl implements BookDao {
 
         return count;
     }
-
 
 }

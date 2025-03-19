@@ -1,9 +1,6 @@
 package service;
 
-import service.custom.impl.BookServiceImpl;
-import service.custom.impl.BorrowRecordServiceImpl;
-import service.custom.impl.MemberServiceImpl;
-import service.custom.impl.ReturnRecordServiceImpl;
+import service.custom.impl.*;
 import utill.ServiceType;
 
 import static utill.ServiceType.BORROWRECORD;
@@ -29,6 +26,7 @@ public class ServiceFactory {
 
             case RETURNRECORD:return (T) ReturnRecordServiceImpl.getInstance();
 
+           case USER: return (T) UserServiceImpl.getInstance();
         }
         return null;
     }

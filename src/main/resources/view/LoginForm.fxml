@@ -30,9 +30,9 @@
                      </font>
                   </Label>
                   <Label layoutX="134.0" layoutY="184.0" prefHeight="20.0" prefWidth="232.0" text="Please complete following fields to access" />
-                  <TextField layoutX="137.0" layoutY="263.0" prefHeight="26.0" prefWidth="201.0" />
-                  <TextField layoutX="137.0" layoutY="320.0" prefHeight="26.0" prefWidth="201.0" />
-                  <Label layoutX="137.0" layoutY="247.0" text="Name">
+                  <TextField fx:id="txtEmail" layoutX="137.0" layoutY="263.0" prefHeight="26.0" prefWidth="201.0" promptText="Enter Your Email" />
+                  <TextField fx:id="txtPassword" layoutX="137.0" layoutY="320.0" prefHeight="26.0" prefWidth="201.0" promptText="Enter Your Password" />
+                  <Label layoutX="137.0" layoutY="247.0" text="Email">
                      <font>
                         <Font name="System Bold" size="11.0" />
                      </font>
@@ -42,7 +42,7 @@
                         <Font name="System Bold" size="11.0" />
                      </font>
                   </Label>
-                  <Button layoutX="136.0" layoutY="387.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: #5051fd;" text="Login" textFill="#f7f7f7">
+                  <Button layoutX="136.0" layoutY="387.0" mnemonicParsing="false" onAction="#btnOnActionLoginClick" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: #5051fd;" text="Login" textFill="#f7f7f7">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -53,7 +53,7 @@
                      </font>
                   </Label>
                   <Label layoutX="134.0" layoutY="204.0" prefHeight="18.0" prefWidth="84.0" text="library System" />
-                  <Button layoutX="301.0" layoutY="425.0" mnemonicParsing="false" style="-fx-background-color: #aed6f1;" text="Register" textFill="#1c0d93">
+                  <Button layoutX="301.0" layoutY="425.0" mnemonicParsing="false" onAction="#btnMoveToRegisterpage" style="-fx-background-color: #aed6f1;" text="Register" textFill="#1c0d93">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

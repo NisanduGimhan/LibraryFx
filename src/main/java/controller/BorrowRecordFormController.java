@@ -31,7 +31,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import static javafx.scene.control.Alert.AlertType.CONFIRMATION;
+
 
 public class BorrowRecordFormController implements Initializable {
 
@@ -78,13 +78,12 @@ public class BorrowRecordFormController implements Initializable {
 
 
     @FXML
-  void btnCompleteOnAction(ActionEvent event) throws SQLException {
+    void btnCompleteOnAction(ActionEvent event) throws SQLException {
         int bookId = Integer.parseInt(lblBookId.getText().trim());
-
 
         boolean allRecordsPlaced = true;
 
-        for (Cart cart:cartlist){
+        for (Cart cart : cartlist) {
             BorrowRecord record = new BorrowRecord(
                     0,
                     cart.getMemberID(),
@@ -95,19 +94,24 @@ public class BorrowRecordFormController implements Initializable {
             );
 
             boolean isPlaced = service.placeBookBorrowRecord(record);
-            if (!isPlaced){
+            if (!isPlaced) {
                 allRecordsPlaced = false;
-
             }
         }
 
-        if(allRecordsPlaced){
-            System.out.println("All book borrow records have been placed successfully!");
+        if (allRecordsPlaced) {
+            showAlert(Alert.AlertType.INFORMATION, "Success", "All book borrow records have been placed successfully!");
         } else {
-            System.out.println("There was an error placing one or more book borrow records.");
+            showAlert(Alert.AlertType.ERROR, "Error", "There was an error placing one or more book borrow records.");
         }
+    }
 
-
+    private void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     @FXML
@@ -146,30 +150,22 @@ public class BorrowRecordFormController implements Initializable {
         String borrowDate = lblDate.getText();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        // ✅ Convert LocalDate to String properly
         LocalDate dueDate = LocalDate.parse(borrowDate, formatter).plusDays(14);
         String dueDateString = dueDate.format(formatter);
 
-        // ✅ Convert ComboBox values properly
-        String bookISBN = comBoxBookISBN.getValue().toString(); // Ensuring it's a String
-        Integer memberID = Integer.parseInt(comBoxMemberID.getValue().toString()); // Convert to Integer
+        String bookISBN = comBoxBookISBN.getValue().toString();
+        Integer memberID = Integer.parseInt(comBoxMemberID.getValue().toString());
 
         cartlist.add(new Cart(
-                bookISBN,  // ✅ Ensure ISBN is a String
-                memberID,  // ✅ Ensure MemberID is an Integer
+                bookISBN,
+                memberID,
                 lblDate.getText(),
-                dueDateString // ✅ Ensure DueDate is a String
+                dueDateString
         ));
 
         tblBookCart.setItems(cartlist);
         comBoxMemberID.setDisable(true);
     }
-
-
-
-
-
-
 
     private  void loadDate() {
         Date date = new Date();

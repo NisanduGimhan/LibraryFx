@@ -50,34 +50,31 @@ public class Reports {
         showReportWithFloatingCircle(reportPath, event);
     }
 
-    /**
-     * Shows a tiny "floating circle" stage with a transparent background
-     * while the Jasper report is compiled/filled on a background thread.
-     */
+
     private void showReportWithFloatingCircle(String reportPath, ActionEvent event) {
-        // 1) Create a transparent stage (no title bar, no background)
+
         Stage loadingStage = new Stage(StageStyle.TRANSPARENT);
 
-        // 2) Just a ProgressIndicator in a StackPane
+
         ProgressIndicator progressIndicator = new ProgressIndicator();
         StackPane root = new StackPane(progressIndicator);
-        // Optional: some padding so it’s not cramped
+
         root.setStyle("-fx-padding: 10; -fx-background-color: transparent;");
 
-        // 3) Scene with transparent fill
+
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
 
         loadingStage.setScene(scene);
 
-        // 4) Place it above the current window, if you like
+
         Window currentWindow = ((Node) event.getSource()).getScene().getWindow();
         loadingStage.initOwner(currentWindow);
 
-        // 5) Show the spinner
+
         loadingStage.show();
 
-        // 6) Load/compile/fill the report in a background thread
+
         Thread loadThread = new Thread(() -> {
             try {
                 JasperDesign design = JRXmlLoader.load(reportPath);
@@ -88,13 +85,13 @@ public class Reports {
                         DBConnection.getInstance().getConnection()
                 );
 
-                // 7) Once done, close the spinner stage and show the Jasper Viewer
+
                 Platform.runLater(() -> {
                     loadingStage.close();
                     JasperViewer.viewReport(jasperPrint, false);
                 });
             } catch (Exception e) {
-                // On any error, close the loader and show an error
+
                 Platform.runLater(() -> {
                     loadingStage.close();
                     showErrorDialog("Failed to load report", e.getMessage());

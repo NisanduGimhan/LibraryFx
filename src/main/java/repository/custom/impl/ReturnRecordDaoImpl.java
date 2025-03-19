@@ -58,11 +58,8 @@ public class ReturnRecordDaoImpl implements ReturnRecordDao {
                 }
             }
         }
-        return null; // If no record is found
+        return null;
     }
-
-
-
 
 
     @Override
@@ -80,7 +77,7 @@ public class ReturnRecordDaoImpl implements ReturnRecordDao {
             conn = DBConnection.getInstance().getConnection();
             conn.setAutoCommit(false);
 
-            // 1) Update the borrow record with ReturnDate
+
             String updateBorrowSql = "UPDATE borrowrecords SET ReturnDate = ? WHERE BorrowID = ?";
             psUpdateBorrow = conn.prepareStatement(updateBorrowSql);
 
@@ -93,7 +90,6 @@ public class ReturnRecordDaoImpl implements ReturnRecordDao {
             psUpdateBorrow.setInt(2, borrowId);
             psUpdateBorrow.executeUpdate();
 
-            // 2) Retrieve fine amount (if any)
             String selectFineSql = "SELECT FineAmount FROM fines WHERE BorrowID = ?";
             psSelectFine = conn.prepareStatement(selectFineSql);
             psSelectFine.setInt(1, borrowId);
@@ -103,10 +99,9 @@ public class ReturnRecordDaoImpl implements ReturnRecordDao {
             boolean hasFine = false;
             if (rsFine.next() && rsFine.getObject("FineAmount") != null) {
                 calculatedFine = rsFine.getDouble("FineAmount");
-                hasFine = calculatedFine > 0; // ✅ Check if a fine exists
+                hasFine = calculatedFine > 0;
             }
 
-            // 3) Get the BookID
             String selectBookSql = "SELECT BookID FROM borrowrecords WHERE BorrowID = ?";
             psSelectBook = conn.prepareStatement(selectBookSql);
             psSelectBook.setInt(1, borrowId);
@@ -121,13 +116,12 @@ public class ReturnRecordDaoImpl implements ReturnRecordDao {
                 throw new SQLException("Error: BookID not found for BorrowID: " + borrowId);
             }
 
-            // 4) Update book’s availability
             String updateBookSql = "UPDATE books SET availabilityStatus = 'Available' WHERE BookID = ?";
             psUpdateBook = conn.prepareStatement(updateBookSql);
             psUpdateBook.setInt(1, bookId);
             psUpdateBook.executeUpdate();
 
-            // 5) Update FineStatus to 'Paid' if a fine exists ✅
+
             if (hasFine) {
                 String updateFineSql = "UPDATE fines SET FineStatus = 'Paid', PaymentDate = NOW() WHERE BorrowID = ?";
                 psUpdateFine = conn.prepareStatement(updateFineSql);
@@ -135,7 +129,6 @@ public class ReturnRecordDaoImpl implements ReturnRecordDao {
                 psUpdateFine.executeUpdate();
             }
 
-            // 6) Commit transaction
             conn.commit();
             System.out.println("Book returned successfully. Fine: RS " + calculatedFine);
 
@@ -153,14 +146,12 @@ public class ReturnRecordDaoImpl implements ReturnRecordDao {
             if (psSelectFine != null) psSelectFine.close();
             if (psSelectBook != null) psSelectBook.close();
             if (psUpdateBook != null) psUpdateBook.close();
-            if (psUpdateFine != null) psUpdateFine.close(); // ✅ Close fine update statement
+            if (psUpdateFine != null) psUpdateFine.close();
             if (conn != null) {
                 conn.setAutoCommit(true);
                 conn.close();
             }
         }
     }
-
-
 
 }

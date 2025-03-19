@@ -122,9 +122,6 @@ public class DashBoardFormController implements Initializable {
 
     }
 
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         URL resource = this.getClass().getResource("/view/HomeForm.fxml");

@@ -67,9 +67,9 @@ public class MembersFormController implements Initializable {
 
         ));
         if (isAdd){
-            new Alert(Alert.AlertType.INFORMATION,"Member Added Successfully✅").show();
+            new Alert(Alert.AlertType.INFORMATION,"Member Added Successfully").show();
         }else {
-            new Alert(Alert.AlertType.ERROR,"Member Added Unsuccessful⚠\uFE0F").show();
+            new Alert(Alert.AlertType.ERROR,"Member Added Unsuccessful").show();
         }
         loadTable();
         clearFields();
@@ -80,9 +80,9 @@ public class MembersFormController implements Initializable {
         boolean idDeleted= service.deleteMember(Integer.valueOf(txtID.getText()));
 
         if (idDeleted){
-            new Alert(Alert.AlertType.INFORMATION,"Member Deleted!✅").show();
+            new Alert(Alert.AlertType.INFORMATION,"Member Deleted!").show();
         }else {
-            new Alert(Alert.AlertType.ERROR,"Member Not Found⚠\uFE0F").show();
+            new Alert(Alert.AlertType.ERROR,"Member Not Found").show();
         }
         loadTable();
         clearFields();
@@ -93,12 +93,11 @@ public class MembersFormController implements Initializable {
         Member member = service.searchMember(Integer.valueOf(txtID.getText()));
 
         if(member==null){
-            new Alert(Alert.AlertType.ERROR, "Book not found⚠\uFE0F").show();
+            new Alert(Alert.AlertType.ERROR, "Book not found").show();
         }else {
             txtName.setText(member.getName());
             txtContactNo.setText(member.getContactInfo());
             txtDate.setValue(member.getMembershipDate());
-
         }
 
     }
@@ -112,17 +111,15 @@ public class MembersFormController implements Initializable {
             existingmbr.setContactInfo(txtContactNo.getText());
             existingmbr.setMembershipDate(txtDate.getValue());
 
-
             boolean isUpdate = service.updateMember(existingmbr);
             if (isUpdate) {
-                new Alert(Alert.AlertType.INFORMATION, "Updated✅").show();
+                new Alert(Alert.AlertType.INFORMATION, "Updated").show();
             } else {
-                new Alert(Alert.AlertType.ERROR, "Not updated⚠\uFE0F").show();
+                new Alert(Alert.AlertType.ERROR, "Not updated").show();
             }
         } else {
             new Alert(Alert.AlertType.ERROR, "Member not found").show();
         }
-
         loadTable();
         clearFields();
     }
@@ -141,7 +138,6 @@ public class MembersFormController implements Initializable {
         colContactNo.setCellValueFactory(new PropertyValueFactory<>("contactInfo"));
         colMembershipdate.setCellValueFactory(new PropertyValueFactory<>("membershipDate"));
 
-
         loadTable();
 
         tblMembers.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldvalue, newValue) -> {
@@ -155,8 +151,6 @@ public class MembersFormController implements Initializable {
         txtName.setText(mbr.getName());
         txtContactNo.setText(mbr.getContactInfo());
         txtDate.setValue(mbr.getMembershipDate());
-
-
     }
 
     private void clearFields(){
@@ -165,5 +159,4 @@ public class MembersFormController implements Initializable {
         txtContactNo.clear();
 
     }
-
 }

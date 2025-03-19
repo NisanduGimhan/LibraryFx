@@ -2,6 +2,7 @@ package utill;
 
 import entity.BookEntity;
 import entity.MemberEntity;
+import entity.UserEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -22,6 +23,7 @@ public class HibernateUtill {
         Metadata metadata = new MetadataSources(biuld)
                 .addAnnotatedClass(BookEntity.class)
                 .addAnnotatedClass(MemberEntity.class)
+                .addAnnotatedClass(UserEntity.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

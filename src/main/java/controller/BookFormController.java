@@ -68,9 +68,9 @@ public class BookFormController implements Initializable {
                 txtStatus.getText()
         ));
         if (isAdd){
-            new Alert(Alert.AlertType.INFORMATION,"Member Added Successfully✅").show();
+            new Alert(Alert.AlertType.INFORMATION,"Member Added Successfully").show();
         }else {
-            new Alert(Alert.AlertType.ERROR,"Member Added Unsuccessful⚠\uFE0F").show();
+            new Alert(Alert.AlertType.ERROR,"Member Added Unsuccessful").show();
         }
         loadTable();
         clearFields();
@@ -82,9 +82,9 @@ public class BookFormController implements Initializable {
        boolean idDeleted= service.deleteBook(txtISBN.getText());
 
         if (idDeleted){
-            new Alert(Alert.AlertType.INFORMATION,"Book Deleted!✅").show();
+            new Alert(Alert.AlertType.INFORMATION,"Book Deleted!").show();
         }else {
-            new Alert(Alert.AlertType.ERROR,"Book Not Found⚠\uFE0F").show();
+            new Alert(Alert.AlertType.ERROR,"Book Not Found").show();
         }
         loadTable();
         clearFields();
@@ -96,7 +96,7 @@ public class BookFormController implements Initializable {
         Book book = service.searchBook(txtISBN.getText());
 
         if(book==null){
-            new Alert(Alert.AlertType.ERROR, "Book not found⚠\uFE0F").show();
+            new Alert(Alert.AlertType.ERROR, "Book not found").show();
         }else {
             txtStatus.setText(book.getAvailabilityStatus());
             txtAuthor.setText(book.getAuthor());
@@ -118,9 +118,9 @@ public class BookFormController implements Initializable {
 
             boolean isUpdate = service.updateBook(existingBook);
             if (isUpdate) {
-                new Alert(Alert.AlertType.INFORMATION, "Updated✅").show();
+                new Alert(Alert.AlertType.INFORMATION, "Updated").show();
             } else {
-                new Alert(Alert.AlertType.ERROR, "Not updated⚠\uFE0F").show();
+                new Alert(Alert.AlertType.ERROR, "Not updated").show();
             }
         } else {
             new Alert(Alert.AlertType.ERROR, "Book not found").show();

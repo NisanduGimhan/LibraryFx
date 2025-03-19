@@ -1,11 +1,9 @@
 package repository;
 
-import repository.custom.impl.BookDaoImpl;
-import repository.custom.impl.BorrowRecordDaoImpl;
-import repository.custom.impl.MemberDaoImpl;
-import repository.custom.impl.ReturnRecordDaoImpl;
+import repository.custom.impl.*;
 import service.SuperService;
 import service.custom.impl.BookServiceImpl;
+import service.custom.impl.UserServiceImpl;
 import utill.DaoType;
 import utill.ServiceType;
 
@@ -37,6 +35,7 @@ public class DaoFactory {
             case RETURNRECORD:
                 return (T) ReturnRecordDaoImpl.getInstance();
 
+            case USER:  return (T) UserDaoImpl.getInstance();
         }
 
         return null;

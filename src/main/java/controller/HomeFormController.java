@@ -115,7 +115,6 @@ public class HomeFormController implements Initializable {
         loadChartData();
         setDueDate();
 
-
         new FadeIn(chartCatogory).play();
         new BounceIn(chartCatogory).setSpeed(1.2).play();
     }

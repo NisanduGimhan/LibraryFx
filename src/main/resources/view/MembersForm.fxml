@@ -29,7 +29,7 @@
                   <TableColumn fx:id="colMembershipdate" prefWidth="109.5999755859375" text="M. Date" />
                </columns>
             </TableView>
-            <Label layoutX="157.0" layoutY="-15.0" prefHeight="102.0" prefWidth="364.0" text="Member Details">
+            <Label layoutX="48.0" layoutY="-15.0" prefHeight="102.0" prefWidth="364.0" text="Member Details">
                <font>
                   <Font name="System Bold" size="47.0" />
                </font>
