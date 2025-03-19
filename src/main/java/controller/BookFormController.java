@@ -123,7 +123,7 @@ public class BookFormController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Not updated").show();
             }
         } else {
-            new Alert(Alert.AlertType.ERROR, "Book not found").show();
+            new Alert(Alert.AlertType.ERROR, "Book cannot found").show();
         }
 
         loadTable();

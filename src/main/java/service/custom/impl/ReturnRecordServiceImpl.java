@@ -1,11 +1,7 @@
 package service.custom.impl;
-
 import dto.ReturnRecord;
-import entity.BorrowRecordEntity;
 import repository.DaoFactory;
-import repository.custom.BookDao;
 import repository.custom.ReturnRecordDao;
-import service.SuperService;
 import service.custom.ReturnRecordService;
 import utill.DaoType;
 
@@ -37,6 +33,5 @@ public class ReturnRecordServiceImpl implements ReturnRecordService {
         return service.returnBookWithTransaction(borrowId,returnDate,fineAmount);
 
     }
-
 
 }
