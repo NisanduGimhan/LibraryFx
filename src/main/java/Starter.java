@@ -15,15 +15,10 @@ public class Starter extends Application {
     public void start(Stage stage) throws Exception {
 
 
-        Parent root = FXMLLoader.load(getClass().getResource("view/DashBoardForm.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/LoginForm.fxml"));
 
-        // Create the scene
         Scene scene = new Scene(root);
-
-        // Set the background color of the scene (the window's background)
-        scene.setFill(Color.BLUE);  // Set the background color of the window to blue
-
-        // Set the scene on the stage
+        scene.setFill(Color.BLUE);
         stage.setScene(scene);
         stage.show();
         stage.setTitle("SmartLibraryX");
